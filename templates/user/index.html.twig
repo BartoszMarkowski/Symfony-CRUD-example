@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+  {% block body %}
+<!-- Insert this where you want the table to appear -->
+<div class="container">
+  <div id="presidents">Loading...</div>
+</div>
+<!-- Insert this at the end of your body element, but before the closing tag -->
+<script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
+<script>
+$(function() {
+    $('#presidents').initDataTables({{ datatable_settings(datatable) }});
+});
+</script>
+{% endblock %}
